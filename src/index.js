@@ -500,7 +500,7 @@ class JSONInput extends Component {
             markupText : data.markup,
             json       : data.json,
             jsObject   : data.jsObject,
-            lines      : data.lines,
+            lines      : cursorPosition,//data.lines,
             error      : data.error,
             cursorPosition : cursorPosition,
         });
@@ -554,7 +554,7 @@ class JSONInput extends Component {
                 break;
             case 'ArrowLeft' : case 'ArrowRight' :
             case 'ArrowUp'   : case 'ArrowDown'  :
-//                 this.setUpdateTime();
+                this.setUpdateTime();
                 break;
             case 'a'         : case 'c'          :
                 if (viewOnly && !ctrlOrMetaIsPressed) this.stopEvent(event);
