@@ -324,7 +324,6 @@ class JSONInput extends Component {
                             }}
                             dangerouslySetInnerHTML = { this.createMarkup(markupText) }
                             onKeyPress     = { this.onKeyPress }
-                            onKeyDown      = { this.onKeyDown }
                             onClick        = { this.onClick }
                             onBlur         = { this.onBlur }
                             onScroll       = { this.onScroll }
@@ -553,7 +552,7 @@ class JSONInput extends Component {
                 break;
             case 'ArrowLeft' : case 'ArrowRight' :
             case 'ArrowUp'   : case 'ArrowDown'  :
-                this.setUpdateTime();
+//                 this.setUpdateTime();
                 break;
             case 'a'         : case 'c'          :
                 if (viewOnly && !ctrlOrMetaIsPressed) this.stopEvent(event);
