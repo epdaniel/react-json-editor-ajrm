@@ -495,15 +495,17 @@ class JSONInput extends Component {
             container = this.refContent,
             data      = this.tokenize(container);
         console.log('internal update')
+        let cursorPosition = this.getCursorPosition(data.error) + cursorOffset;
         if('onChange' in this.props) this.props.onChange({
             plainText  : data.indented,
             markupText : data.markup,
             json       : data.json,
             jsObject   : data.jsObject,
             lines      : data.lines,
-            error      : data.error
+            error      : data.error,
+            cursorPosition : cursorPosition,
         });
-        let cursorPosition = this.getCursorPosition(data.error) + cursorOffset;
+
         console.log('cursor ', cursorPosition)
         this.setState({
             plainText  : data.indented,
