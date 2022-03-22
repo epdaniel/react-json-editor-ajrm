@@ -494,8 +494,7 @@ class JSONInput extends Component {
         const
             container = this.refContent,
             data      = this.tokenize(container);
-        console.log('internal update')
-        let cursorPosition = this.getCursorPosition(data.error) + cursorOffset;
+        let cursorPosition = this.getCursorPosition(true) + cursorOffset;
         if('onChange' in this.props) this.props.onChange({
             plainText  : data.indented,
             markupText : data.markup,
@@ -506,7 +505,6 @@ class JSONInput extends Component {
             cursorPosition : cursorPosition,
         });
 
-        console.log('cursor ', cursorPosition)
         this.setState({
             plainText  : data.indented,
             markupText : data.markup,
@@ -516,7 +514,7 @@ class JSONInput extends Component {
             error      : data.error
         });
         this.updateTime = false;
-        if(updateCursorPosition) this.setCursorPosition(cursorPosition);
+        if(updateCursorPosition) this.setCursorPosition(100);
     }
     scheduledUpdate(){
         if('onKeyPressUpdate' in this.props) if(this.props.onKeyPressUpdate===false) return;
