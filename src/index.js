@@ -503,6 +503,7 @@ class JSONInput extends Component {
             lines      : cursorPosition,//data.lines,
             error      : data.error,
             cursorPosition : cursorPosition,
+            bogy:       'tests',
         });
 
         this.setState({
