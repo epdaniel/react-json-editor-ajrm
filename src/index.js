@@ -491,7 +491,7 @@ class JSONInput extends Component {
         if(nextPosition > 0) setPosition(nextPosition);
         else this.refContent.focus();
     }
-    update(cursorOffset=0,updateCursorPosition=true){
+    update(cursorOffset=0,updateCursorPosition=false){
         const
             container = this.refContent,
             data      = this.tokenize(container);
